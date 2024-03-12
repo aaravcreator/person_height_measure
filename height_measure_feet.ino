@@ -6,7 +6,7 @@ const char *softAPpassword = "password"; // ESP WIFI HOTSPOT PASSWORD
 
 const int trigPin = 4; // D2 pin (GPIO 4)
 const int echoPin = 5; // D1 pin (GPIO 5)
-
+float baseToSensor = 176.5;  // Distance from sensor to base in centimeters
 ESP8266WebServer server(80);
 
 void handleRoot() {
@@ -23,7 +23,7 @@ void handleRoot() {
   float distance = duration * 0.034 / 2;
 
   // Calculate person's height in feet and inches
-  float baseToSensor = 176.5;  // Distance from sensor to base in centimeters
+//  float baseToSensor = 176.5;  // Distance from sensor to base in centimeters
   float personHeight = baseToSensor - distance;
 
   // Convert height to feet and inches
@@ -62,7 +62,7 @@ void calc_height() {
   float distance = duration * 0.034 / 2;
 
   // Calculate person's height in feet and inches
-  float baseToSensor = 176.5;  // Distance from sensor to base in centimeters
+
   float personHeight = baseToSensor - distance;
 
   // Convert height to feet and inches
